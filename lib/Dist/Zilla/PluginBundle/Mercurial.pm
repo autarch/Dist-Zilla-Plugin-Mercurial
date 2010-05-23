@@ -18,7 +18,7 @@ sub bundle_config {
     for my $name (@names) {
         my $class = "Dist::Zilla::Plugin::Mercurial::$name";
 
-        push @config, [ "$section->{name}/$name" => $class ];
+        push @config, [ "$section->{name}/$name" => $class => {} ];
     }
 
     return @config;
@@ -36,7 +36,6 @@ __END__
 
 =for Pod::Coverage
     bundle_config
-    mvp_multivalue_args
 
 =head1 SYNOPSIS
 
